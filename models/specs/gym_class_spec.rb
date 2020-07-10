@@ -2,8 +2,8 @@ require "minitest/autorun"
 require "minitest/reporters"
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
-require_relative "../member"
+require_relative "../class"
 
-class TestMember < MiniTest::Test
+class TestClass < MiniTest::Test
 
 end
