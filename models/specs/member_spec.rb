@@ -25,7 +25,7 @@ class TestMember < MiniTest::Test
 
     # INITIALISATION
     def test_has_id__id_exists
-        assert_equal("1", @member1.id)
+        assert_equal(1, @member1.id)
     end
 
     def test_has_id__id_does_not_exist

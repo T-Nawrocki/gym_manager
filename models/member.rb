@@ -3,7 +3,7 @@ class Member
     attr_reader :id, :first_name, :last_name, :preferred_name, :age, :join_date
 
     def initialize(options)
-        @id = options["id"] if options["id"].to_i
+        @id = options["id"].to_i if options["id"]
         @first_name = options["first_name"]
         @last_name = options["last_name"]
         @preferred_name = options["preferred_name"] ? options["preferred_name"] : options["first_name"]
