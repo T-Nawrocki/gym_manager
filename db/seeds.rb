@@ -59,6 +59,9 @@ booking2.save
 member1.age = "16"
 member1.update
 
+class1.available_times = "{Mon 13:30,Tue 15:45,Sat 18:00}"
+class1.update
+
 
 binding.pry
 nil
