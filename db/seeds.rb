@@ -1,3 +1,4 @@
+require "pry-byebug"
 require_relative "../models/member"
 require_relative "../models/gym_class"
 require_relative "../models/booking"
@@ -53,3 +54,7 @@ booking2 = Booking.new({
 
 booking1.save
 booking2.save
+
+
+binding.pry
+nil

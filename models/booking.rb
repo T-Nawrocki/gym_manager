@@ -27,6 +27,15 @@ class Booking
     
     # READ
 
+    def self.find(id)
+        sql = "SELECT * FROM bookings
+        WHERE id = $1"
+        values = [id]
+
+        result = SqlRunner.run(sql, values).first
+        result ? Booking.new(result) : nil
+    end
+
     # UPDATE
 
     # DELETE
