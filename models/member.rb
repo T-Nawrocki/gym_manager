@@ -28,4 +28,14 @@ class Member
         @id = result["id"].to_i
     end
 
+    # READ
+
+    # UPDATE
+
+    # DELETE
+    def self.delete_all
+        sql = "DELETE FROM members"
+        SqlRunner.run(sql)
+    end
+
 end

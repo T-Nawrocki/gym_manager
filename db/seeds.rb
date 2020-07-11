@@ -1,5 +1,7 @@
 require_relative "../models/member"
 
+Member.delete_all
+
 member1 = Member.new({
     "id" => "1",
     "first_name" => "Hinata",
