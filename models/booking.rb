@@ -11,6 +11,10 @@ class Booking
         @time = options["time"]
     end
 
+    def self.map_items(data)
+        data.map { |booking| self.new(booking) }
+    end
+
 
     # === CRUD METHODS ===
     # CREATE
@@ -26,6 +30,11 @@ class Booking
     end
     
     # READ
+    def self.all
+        sql = "SELECT * FROM bookings"
+        result = SqlRunner.run(sql)
+        self.map_items(result)
+    end
 
     def self.find(id)
         sql = "SELECT * FROM bookings
