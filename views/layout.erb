@@ -6,6 +6,31 @@
     <title>Gym Manager</title>
 </head>
 <body>
+    <header>
+        <img 
+            src="https://via.placeholder.com/200x100" 
+            alt="Gym Manager Logo"
+            id="header-logo"
+        >
+        <nav>
+            <a href="/">
+                <button class="nav-button">
+                    Home
+                </button>    
+            </a>
+            <a href="/members-list">
+                <button class="nav-button">
+                    Members List
+                </button>
+            </a>
+            <a href="/class-list">
+                <button class="nav-button">
+                    Class List
+                </button>
+            </a>
+        </nav>
+    </header>
+
     <%= yield %>
 </body>
 </html>
