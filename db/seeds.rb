@@ -22,9 +22,16 @@ member2 = Member.new({
     "age" => "15",
     "join_date" => "10 Jul 2020"
     })
+member3 = Member.new({
+    "first_name" => "Tsukishima",
+    "last_name" => "Kei",
+    "age" => "15",
+    "join_date" => "10 Jul 2020"
+    })
 
 member1.save
 member2.save
+member3.save
 
 
 class1 = GymClass.new({
@@ -65,6 +72,7 @@ class1.update
 booking1.time = class1.available_times[0]
 booking1.update
 
+member3.delete
 
 binding.pry
 nil
