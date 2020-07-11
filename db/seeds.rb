@@ -43,9 +43,14 @@ class2 = GymClass.new({
     "name" => "HIIT",
     "trainer_name" => "Washijo"
 })
+class3 = GymClass.new({
+    "name" => "HIIT",
+    "trainer_name" => "Washijo"
+})
 
 class1.save
 class2.save
+class3.save
 
 
 booking1 = Booking.new({
@@ -73,6 +78,7 @@ booking1.time = class1.available_times[0]
 booking1.update
 
 member3.delete
+class3.delete
 
 binding.pry
 nil
