@@ -14,11 +14,18 @@ class Member
     end
 
 
-    # CRUD METHODS
+    # === CRUD METHODS ===
     # CREATE
 
     def save
-        sql = 
+        sql = "INSERT INTO members 
+        (first_name, last_name, preferred_name, age, join_date)
+        VALUES ($1, $2, $3, $4, $5)
+        RETURNING id"
+        values = [@first_name, @last_name, @preferred_name, @age, @join_date]
+
+        result = SqlRunner.run(sql, values).first
+        @id = result["id"].to_i
     end
 
 end
