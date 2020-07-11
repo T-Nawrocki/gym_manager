@@ -1,3 +1,5 @@
+require_relative "../db/sql_runner.rb"
+
 class Member
 
     attr_reader :id, :first_name, :last_name, :preferred_name, :age, :join_date
@@ -9,6 +11,14 @@ class Member
         @preferred_name = options["preferred_name"] ? options["preferred_name"] : options["first_name"]
         @age = options["age"].to_i
         @join_date = options["join_date"]
+    end
+
+
+    # CRUD METHODS
+    # CREATE
+
+    def save
+        sql = 
     end
 
 end
