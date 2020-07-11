@@ -31,4 +31,14 @@ class GymClass
         @id = result["id"].to_i
     end
 
+    # READ
+
+    # UPDATE
+
+    # DELETE
+    def self.delete_all
+        sql = "DELETE FROM gym_classes"
+        SqlRunner.run(sql)
+    end
+
 end

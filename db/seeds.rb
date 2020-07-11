@@ -3,6 +3,7 @@ require_relative "../models/gym_class"
 
 
 Member.delete_all
+GymClass.delete_all
 
 
 member1 = Member.new({
