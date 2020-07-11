@@ -22,16 +22,9 @@ member2 = Member.new({
     "age" => "15",
     "join_date" => "10 Jul 2020"
     })
-member3 = Member.new({
-    "first_name" => "Tsukishima",
-    "last_name" => "Kei",
-    "age" => "15",
-    "join_date" => "10 Jul 2020"
-    })
 
 member1.save
 member2.save
-member3.save
 
 
 class1 = GymClass.new({
@@ -43,14 +36,9 @@ class2 = GymClass.new({
     "name" => "HIIT",
     "trainer_name" => "Washijo"
 })
-class3 = GymClass.new({
-    "name" => "HIIT",
-    "trainer_name" => "Washijo"
-})
 
 class1.save
 class2.save
-class3.save
 
 
 booking1 = Booking.new({
@@ -68,17 +56,39 @@ booking1.save
 booking2.save
 
 
-member1.age = "16"
-member1.update
+# member1.age = "16"
+# member1.update
 
-class1.available_times = ["Mon 13:30", "Tue 15:45", "Sat 18:00"]
-class1.update
+# class1.available_times = ["Mon 13:30", "Tue 15:45", "Sat 18:00"]
+# class1.update
 
-booking1.time = class1.available_times[0]
-booking1.update
+# booking1.time = class1.available_times[0]
+# booking1.update
 
-member3.delete
-class3.delete
+
+# member3 = Member.new({
+#     "first_name" => "Tsukishima",
+#     "last_name" => "Kei",
+#     "age" => "15",
+#     "join_date" => "10 Jul 2020"
+#     })
+# class3 = GymClass.new({
+#     "name" => "HIIT",
+#     "trainer_name" => "Washijo"
+# })
+# booking3 = Booking.new({
+#     "member_id" => member2.id,
+#     "gym_class_id" => class1.id,
+#     "time" => class1.available_times[1]
+# })
+
+# member3.save
+# class3.save
+# booking3.save
+
+# member3.delete
+# class3.delete
+# booking3.delete
 
 binding.pry
 nil
