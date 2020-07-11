@@ -13,6 +13,10 @@ class Member
         @join_date = options["join_date"]
     end
 
+    def self.map_items(data)
+        data.map { |member| Member.new(member) }
+    end
+
 
     # === CRUD METHODS ===
     # CREATE
@@ -29,6 +33,20 @@ class Member
     end
 
     # READ
+    def self.all
+        sql = "SELECT * FROM members"
+        result = SqlRunner.run(sql)
+        self.map_items(result)
+    end
+
+    def self.find(id)
+        sql = "SELECT * FROM members
+        WHERE id = $1"
+        values = [id]
+
+        result = SqlRunner.run(sql, values).first
+        result ? Member.new(result) : nil
+    end
 
     # UPDATE
 

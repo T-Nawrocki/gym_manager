@@ -35,6 +35,8 @@ class GymClass
         @id = result["id"].to_i
     end
 
+    # READ
+
     def self.all
         sql = "SELECT * FROM gym_classes"
         result = SqlRunner.run(sql)
@@ -48,8 +50,6 @@ class GymClass
         result = SqlRunner.run(sql, values).first
         result ? GymClass.new(result) : nil
     end
-
-    # READ
 
     # UPDATE
 
