@@ -2,13 +2,19 @@ require_relative "../db/sql_runner.rb"
 
 class Member
 
-    attr_reader :id, :first_name, :last_name, :preferred_name, :age, :join_date
+    attr_accessor :first_name, :last_name, :preferred_name, :age, :join_date
+    attr_reader :id
 
     def initialize(options)
         @id = options["id"].to_i if options["id"]
         @first_name = options["first_name"]
         @last_name = options["last_name"]
-        @preferred_name = options["preferred_name"] ? options["preferred_name"] : options["first_name"]
+        @preferred_name = 
+            if options["preferred_name"]
+                options["preferred_name"]
+            else
+                options["first_name"]
+            end
         @age = options["age"].to_i
         @join_date = options["join_date"]
     end
@@ -20,7 +26,6 @@ class Member
 
     # === CRUD METHODS ===
     # CREATE
-
     def save
         sql = "INSERT INTO members 
         (first_name, last_name, preferred_name, age, join_date)
@@ -49,6 +54,21 @@ class Member
     end
 
     # UPDATE
+    def update
+        sql = "UPDATE members
+        SET (first_name, last_name, preferred_name, age, join_date)
+        = ($1, $2, $3, $4, $5)
+        WHERE id = $6"
+        values = [
+            @first_name, 
+            @last_name, 
+            @preferred_name, 
+            @age, 
+            @join_date, 
+            @id
+        ]
+        SqlRunner.run(sql, values)
+    end
 
     # DELETE
     def self.delete_all

@@ -36,7 +36,6 @@ class GymClass
     end
 
     # READ
-
     def self.all
         sql = "SELECT * FROM gym_classes"
         result = SqlRunner.run(sql)

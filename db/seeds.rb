@@ -56,5 +56,9 @@ booking1.save
 booking2.save
 
 
+member1.age = "16"
+member1.update
+
+
 binding.pry
 nil
