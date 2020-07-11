@@ -5,6 +5,7 @@ require_relative "../models/booking"
 
 Member.delete_all
 GymClass.delete_all
+Booking.delete_all
 
 
 member1 = Member.new({
