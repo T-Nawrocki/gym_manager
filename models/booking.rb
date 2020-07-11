@@ -2,7 +2,8 @@ require_relative "../db/sql_runner"
 
 class Booking
     
-    attr_reader :id, :member_id, :gym_class_id, :time
+    attr_accessor :member_id, :gym_class_id, :time
+    attr_reader :id
 
     def initialize(options)
         @id = options["id"].to_i if options["id"]
@@ -46,6 +47,14 @@ class Booking
     end
 
     # UPDATE
+    def update
+        sql = "UPDATE bookings
+        SET (member_id, gym_class_id, time)
+        = ($1, $2, $3)
+        WHERE id = $4"
+        values = [@member_id, @gym_class_id, @time, @id]
+        SqlRunner.run(sql, values)
+    end
 
     # DELETE
     def self.delete_all

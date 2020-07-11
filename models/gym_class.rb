@@ -57,7 +57,8 @@ class GymClass
         SET (name, trainer_name, available_times)
         = ($1, $2, $3)
         WHERE id = $4"
-        values = [@name, @trainer_name, @available_times, @id]
+        available_times_sql = SqlRunner.convert_to_sql_array(@available_times)
+        values = [@name, @trainer_name, available_times_sql, @id]
         SqlRunner.run(sql, values)
     end
 
