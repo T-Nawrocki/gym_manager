@@ -16,6 +16,10 @@ class GymClass
             end
     end
 
+    def self.map_items(data)
+        data.map { |gym_class| GymClass.new(gym_class) }
+    end
+
 
     # === CRUD METHODS ===
     # CREATE
@@ -29,6 +33,20 @@ class GymClass
 
         result = SqlRunner.run(sql, values).first
         @id = result["id"].to_i
+    end
+
+    def self.all
+        sql = "SELECT * FROM gym_classes"
+        result = SqlRunner.run(sql)
+        self.map_items(result)
+    end
+
+    def self.find(id)
+        sql = "SELECT * FROM gym_classes
+        WHERE id = $1"
+        values = [id]
+        result = SqlRunner.run(sql, values).first
+        result ? GymClass.new(result) : nil
     end
 
     # READ
