@@ -7,3 +7,8 @@ get "/class-list" do
     @gym_classes = GymClass.all
     erb(:"gym_classes/index")
 end
+
+get "/class/:id" do
+    @gym_class = GymClass.find(params["id"])
+    erb(:"gym_classes/show")
+end
