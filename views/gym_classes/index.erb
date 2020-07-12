@@ -3,6 +3,10 @@
 
 <ul id="class-list">
     <% @gym_classes.each do |gym_class| %>
-        <li><%= gym_class.name %> (<%= gym_class.trainer_name %>)</li>
+        <li>
+            <a href="/class/<%= gym_class.id %>">
+                <%= gym_class.name %> (<%= gym_class.trainer_name %>)
+            </a>
+        </li>
     <% end %>
 </ul>
