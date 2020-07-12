@@ -56,4 +56,10 @@ class TestMember < MiniTest::Test
         assert_equal("10 Jul 2020", @member1.join_date)
     end
 
+
+    # OTHER
+    def test_full_name
+        assert_equal("Hinata Shoyo", @member1.full_name)
+    end
+
 end

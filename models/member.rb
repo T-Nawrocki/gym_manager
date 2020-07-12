@@ -23,6 +23,10 @@ class Member
         data.map { |member| Member.new(member) }
     end
 
+    def full_name
+        "#{@first_name} #{@last_name}"
+    end
+
 
     # === CRUD METHODS ===
     # CREATE
