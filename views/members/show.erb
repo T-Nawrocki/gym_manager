@@ -2,6 +2,11 @@
 <hr>
 
 <div class="details">
-    <p><b>Name:</b> <%= @member.full_name %></p>
-    <p><b>Preferred Name: </b></p>
+    <ul class="details-list">
+        <li><b>Name:</b> <%= @member.full_name %></li>
+        <li><b>Preferred Name:</b> <%= @member.preferred_name %></li>
+        <li><b>Age:</b> <%= @member.age %></li>
+        <li><b>Join Date:</b> <%= @member.join_date %></li>
+    </ul>
+    <hr>
 </div>
