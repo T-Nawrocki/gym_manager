@@ -3,6 +3,10 @@
 
 <ul id="members-list">
     <% @members.each do |member| %>
-        <li><%= member.full_name %> (<%= member.preferred_name %>)</li>
+        <li>
+            <a href="/member/<%= member.id %>">
+                <%= member.full_name %> (<%= member.preferred_name %>)
+            </a>
+        </li>
     <% end %>
 </ul>
