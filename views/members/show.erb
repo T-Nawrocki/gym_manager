@@ -13,10 +13,10 @@
 <div class="details">
     <h2>Bookings</h2>
     <ul class="details-list">
-        <% @member.classes.each do |gym_class| %>
+        <% @member.bookings.each do |booking| %>
             <li>
-                <a href="/class/<%= gym_class.id %>">
-                    <%= gym_class.name %> - 
+                <a href="/class/<%= booking.gym_class.id %>">
+                    <%= booking.gym_class.name %> — <%= booking.time %>
                 </a>
             </li>
         <% end %>
