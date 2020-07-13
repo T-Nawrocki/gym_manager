@@ -32,3 +32,15 @@ post "/member/:id/delete" do
     member.delete
     redirect "/members-list"
 end
+
+
+get "/member/:id/edit" do
+    @member = Member.find(params["id"])
+    erb(:"members/edit")
+end
+
+post "/member/:id/edit" do
+    edited_member = Member.new(params)
+    edited_member.update
+    redirect "/member/#{edited_member.id}"
+end

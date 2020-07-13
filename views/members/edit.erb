@@ -1,0 +1,26 @@
+<header class="page-header">
+    <h1>Edit Member Details</h1>
+</header>
+
+<form action="/member/<%= @member.id %>/edit" method="post" class="new-member-form">
+
+    <label for="first-name-input">First Name</label>
+    <input type="text" id="first-name-input" name="first_name" value=<%= @member.first_name %>>
+
+    <label for="last-name-input">Last Name</label>
+    <input type="text" id="last-name-input" name="last_name" value=<%= @member.last_name %>>
+
+    <label for="preferred-name-input">
+        Preferred Name (we'll use your first name if you don't have a different preferred name)
+    </label>
+    <input type="text" id="preferred-name-input" name="preferred_name" value=<%= @member.preferred_name %>>
+
+    <label for="age-input">Age</label>
+    <input type="number" id="age-input" name="age" min="15" max="125" value=<%= @member.age %>>
+
+    <label for="join-date-input">Join Date</label>
+    <input type="date" id="join-date-input" name="join_date" value=<%= @member.join_date %>>
+
+    <input type="submit" value="Confirm">
+
+</form>

@@ -4,6 +4,9 @@
     <form action="/booking/new" method="get">
         <input type="submit" value="Book a class for this member">
     </form>
+    <form action="/member/<%= @member.id %>/edit" method="get">
+        <input type="submit" value="Edit member details">
+    </form>
     <form action="/member/<%= @member.id %>/delete" method="post">
         <input type="submit" value="Delete this member">
     </form>
