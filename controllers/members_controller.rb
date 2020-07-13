@@ -17,7 +17,7 @@ get "/member/:id" do
     erb(:"members/show")
 end
 
-post "/members-list" do 
+post "/members-list" do
     new_member = Member.new(params)
     new_member.save
 end

@@ -12,7 +12,7 @@ class Member
         @first_name = options["first_name"]
         @last_name = options["last_name"]
         @preferred_name = 
-            if options["preferred_name"]
+            if options["preferred_name"] && options["preferred_name"] != ""
                 options["preferred_name"]
             else
                 options["first_name"]
