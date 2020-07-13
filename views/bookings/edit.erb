@@ -1,0 +1,32 @@
+<header class="page-header">
+    <h1>Edit Booking</h1>
+</header>
+
+<form action="/booking/<%= @booking.id %>/edit" method="post" class="booking-form">
+
+    <label for="member-select">Member</label>
+    <select name="member_id" id="member-select">
+        <% Member.all.each do |member| %>
+            <option value="<%= member.id %>" <%= "selected" if @booking.member_id == member.id%>>
+                <%= member.full_name %>
+            </option>
+        <% end %>
+    </select>
+
+    <label for="gym-class-select">Class</label>
+    <select name="gym_class_id" id="gym-class-select">
+        <% GymClass.all.each do |gym_class| %>
+            <option value="<%= gym_class.id %>" <%= "selected" if @booking.gym_class_id == gym_class.id%>>
+                <%= gym_class.name %>
+            </option>
+        <% end %>
+    </select>
+
+    <label for="time-input">Time</label>
+    <input type="text" id="time-input" name="time" value="<%= @booking.time %>">
+
+    <%= binding.pry %>
+
+    <input type="submit" value="Confirm">
+
+</form>

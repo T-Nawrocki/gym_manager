@@ -32,6 +32,9 @@
                 <a href="/class/<%= booking.gym_class.id %>">
                     <%= booking.gym_class.name %> — <%= booking.time %>
                 </a>
+                <form action="/booking/<%= booking.id %>/edit" method="get">
+                    <input type="submit" value="Edit Booking">
+                </form>
                 <form action="/booking/<%= booking.id %>/delete" method="post">
                     <input type="submit" value="Cancel Booking">
                 </form>

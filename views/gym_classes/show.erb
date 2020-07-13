@@ -38,6 +38,12 @@
                 <a href="/member/<%= booking.member.id %>">
                     <%= booking.member.full_name %> (<%= booking.member.preferred_name%>) — <%= booking.time %>
                 </a>
+                <form action="/booking/<%= booking.id %>/edit" method="get">
+                    <input type="submit" value="Edit Booking">
+                </form>
+                <form action="/booking/<%= booking.id %>/delete" method="post">
+                    <input type="submit" value="Cancel Booking">
+                </form>
             </li>
         <% end %>
     </ul>
