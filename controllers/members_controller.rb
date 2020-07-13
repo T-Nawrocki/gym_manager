@@ -20,4 +20,5 @@ end
 post "/members-list" do
     new_member = Member.new(params)
     new_member.save
+    redirect "/members-list"
 end
