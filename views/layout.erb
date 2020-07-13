@@ -16,24 +16,18 @@
             id="header-logo"
         >
         <nav>
-            <a href="/">
-                <button class="nav-button">
-                    Home
-                </button>    
-            </a>
-            <a href="/members-list">
-                <button class="nav-button">
-                    Members List
-                </button>
-            </a>
-            <a href="/class-list">
-                <button class="nav-button">
-                    Class List
-                </button>
-            </a>
-            <a href="/booking/new">
-                <button>New Booking</button>
-            </a>
+            <form action="/" method="get">
+                <input type="submit" value="Home" class="nav-button">   
+            </form>
+            <form action="/members-list" method="get">
+                <input type="submit" value="Members List" class="nav-button">
+            </form>
+            <form action="/class-list" method="get">
+                <input type="submit" value="Class List" class="nav-button">
+            </form>
+            <form action="/booking/new" method="get">
+                <input type="submit" value="New Booking" class="nav-button">
+            </form>
         </nav>
     </header>
 

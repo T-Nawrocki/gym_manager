@@ -1,8 +1,8 @@
 <header class="page-header">
     <h1><%= @gym_class.name %></h1>
-    <a href="/booking/new">
-        <button>Book a place on this class</button>
-    </a>
+    <form action="/booking/new" method="get">
+        <input type="submit" value="Book a place on this class">
+    </form>
 </header>
 
 <div class="details">
