@@ -10,6 +10,18 @@
     </ul>
     <hr>
 </div>
+<div class="details">
+    <h2>Bookings</h2>
+    <ul class="details-list">
+        <% @member.classes.each do |gym_class| %>
+            <li>
+                <a href="/class/<%= gym_class.id %>">
+                    <%= gym_class.name %> - 
+                </a>
+            </li>
+        <% end %>
+    </ul>
+</div>
 
 <footer>
     <a href="/members-list">

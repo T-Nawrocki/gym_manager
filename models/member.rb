@@ -1,4 +1,6 @@
 require_relative "../db/sql_runner.rb"
+require_relative "booking"
+require_relative "gym_class"
 
 class Member
 
@@ -97,6 +99,15 @@ class Member
 
         result = SqlRunner.run(sql, values)
         GymClass.map_items(result)
+    end
+
+    def bookings
+        sql = "SELECT * FROM bookings
+        WHERE member_id = $1"
+        values = [@id]
+
+        result = SqlRunner.run(sql, values)
+        Booking.map_items(result)
     end
 
 end
