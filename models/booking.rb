@@ -1,4 +1,6 @@
 require_relative "../db/sql_runner"
+require_relative "member"
+require_relative "gym_class"
 
 class Booking
     
@@ -68,5 +70,14 @@ class Booking
         values = [@id]
         SqlRunner.run(sql, values)
     end 
+
+    # READ RELATED
+    def gym_class
+        GymClass.find(@gym_class_id)
+    end
+
+    def member
+        Member.find(@member_id)
+    end
 
 end
