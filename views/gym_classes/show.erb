@@ -2,6 +2,7 @@
 <hr>
 
 <div class="details">
+    <h2>Class Details</h2>
     <ul class="details-list">
         <li><b>Class:</b> <%= @gym_class.name %></li>
         <li><b>Trainer:</b> <%= @gym_class.trainer_name %></li>
@@ -15,6 +16,19 @@
         </li>
     </ul>
     <hr>
+</div>
+
+<div class="details">
+    <h2>Bookings</h2>
+    <ul class="details-list">
+        <% @gym_class.bookings.each do |booking| %>
+            <li>
+                <a href="/member/<%= booking.member.id %>">
+                    <%= booking.member.full_name %> (<%= booking.member.preferred_name%>) — <%= booking.time %>
+                </a>
+            </li>
+        <% end %>
+    </ul>
 </div>
 
 <footer>
