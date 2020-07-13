@@ -87,4 +87,13 @@ class GymClass
         Member.map_items(result)
     end
 
+    def bookings
+        sql = "SELECT * FROM bookings
+        WHERE gym_class_id = $1"
+        values = [@id]
+
+        result = SqlRunner.run(sql, values)
+        Booking.map_items(result)
+    end
+
 end
