@@ -15,6 +15,9 @@ get "/class/new" do
 end
 
 post "/class/new" do
+    new_class = GymClass.new(params)
+    new_class.save
+    redirect "/class-list"
 end
 
 
