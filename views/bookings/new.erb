@@ -1,0 +1,28 @@
+<header class="page-header">
+    <h1>New Booking</h1>
+</header>
+
+<form action="/booking/new" method="post" class="new-booking-form">
+
+    <label for="member-select">Member</label>
+    <select name="member_id" id="member-select">
+        <option/>
+        <% Member.all.each do |member| %>
+            <option value="<%= member.id %>"><%= member.full_name %></option>
+        <% end %>
+    </select>
+
+    <label for="gym-class-select">Class</label>
+    <select name="gym_class_id" id="gym-class-select">
+        <option/>
+        <% GymClass.all.each do |gym_class| %>
+            <option value="<%= gym_class.id %>"><%= gym_class.name %></option>
+        <% end %>
+    </select>
+
+    <label for="time-input">Time</label>
+    <input type="text" id="time-input" name="time">
+
+    <input type="submit" value="Confirm">
+
+</form>
