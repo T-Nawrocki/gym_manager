@@ -30,7 +30,7 @@ member2.save
 class1 = GymClass.new({
     "name" => "Volleyball",
     "trainer_name" => "Ukai",
-    "available_times" => "{Mon 12:30,Tue 15:45,Sat 18:00}"
+    "available_times" => "{\"Mon 12:30\",\"Tue 15:45\",\"Sat 18:00\"}"
 })
 class2 = GymClass.new({
     "name" => "HIIT",

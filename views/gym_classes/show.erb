@@ -9,7 +9,7 @@
             <b>Available Times:</b>
             <ul class="details-list-nested">
                 <% @gym_class.available_times.each do |time| %>
-                    <li><%= time[1...-1] %></li>
+                    <li><%= time %></li>
                 <% end %>
             </ul>
         </li>
