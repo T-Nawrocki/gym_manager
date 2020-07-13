@@ -32,6 +32,8 @@ class GymClass
         available_times_sql = SqlRunner.convert_to_sql_array(@available_times)
         values = [@name, @trainer_name, available_times_sql]
 
+        binding.pry
+
         result = SqlRunner.run(sql, values).first
         @id = result["id"].to_i
     end

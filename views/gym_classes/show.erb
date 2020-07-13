@@ -4,6 +4,9 @@
     <form action="/booking/new" method="get">
         <input type="submit" value="Book a place on this class">
     </form>
+    <form action="/class/<%= @gym_class.id %>/edit" method="get">
+        <input type="submit" value="Edit class details">
+    </form>
     <form action="/class/<%= @gym_class.id %>/delete" method="post">
         <input type="submit" value="Delete this class">
     </form>

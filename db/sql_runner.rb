@@ -14,7 +14,7 @@ class SqlRunner
     end
 
     def self.convert_to_sql_array(array)
-        "{#{array.join(', ')}}"
+        "{#{array.join(",")}}"
     end
 
     def self.convert_to_ruby_array(string)

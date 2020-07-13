@@ -1,0 +1,22 @@
+<header class="page-header">
+    <h1>Edit Class Details</h1>
+</header>
+
+<form action="/class/<%= @gym_class.id %>/edit" method="post" class="class-form">
+
+    <label for="name-input">Name</label>
+    <input type="text" id="name-input" name="name" value="<%= @gym_class.name %>">
+
+    <label for="trainer-name-input">Trainer</label>
+    <input type="text" id="trainer-name-input" name="trainer_name" value="<%= @gym_class.trainer_name %>">
+
+    <label for="available-times-form">Available Times</label>
+    <input type="text" 
+           id="available-time-input" 
+           name="available_times" 
+           value="<%= SqlRunner.convert_to_sql_array(@gym_class.available_times) %>"
+    >
+
+    <input type="submit" value="Confirm">
+
+</form>

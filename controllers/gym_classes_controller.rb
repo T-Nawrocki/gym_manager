@@ -33,3 +33,14 @@ post "/class/:id/delete" do
     redirect "/class-list"
 end
 
+
+get "/class/:id/edit" do
+    @gym_class = GymClass.find(params["id"])
+    erb(:"gym_classes/edit")
+end
+
+post "/class/:id/edit" do
+    edited_class = GymClass.new(params)
+    edited_class.update
+    redirect "/class/#{edited_class.id}"
+end
