@@ -75,4 +75,16 @@ class GymClass
         SqlRunner.run(sql, values)
     end
 
+    # READ RELATED
+    def members
+        sql = "SELECT members.* 
+        FROM members INNER JOIN bookings
+        ON members.id = bookings.member_id
+        WHERE gym_class_id = $1"
+        values = [@id]
+
+        result = SqlRunner.run(sql, values)
+        Member.map_items(result)
+    end
+
 end
