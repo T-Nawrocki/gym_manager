@@ -11,7 +11,7 @@ end
 
 
 get "/class/new" do
-    erb(:"gym/classes/new")
+    erb(:"gym_classes/new")
 end
 
 post "/class/new" do
