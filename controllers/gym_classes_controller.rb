@@ -26,3 +26,10 @@ get "/class/:id" do
     erb(:"gym_classes/show")
 end
 
+
+post "/class/:id/delete" do
+    gym_class = GymClass.find(params["id"])
+    gym_class.delete
+    redirect "/class-list"
+end
+
