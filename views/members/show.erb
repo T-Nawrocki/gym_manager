@@ -3,6 +3,9 @@
     <a href="/booking/new">
         <button>Book a class for this member</button>
     </a>
+    <form action="/member/<%= @member.id %>/delete" method="post">
+        <input type="submit" value="Delete this member">
+    </form>
 </header>
 
 <div class="details">

@@ -25,3 +25,10 @@ get "/member/:id" do
     @member = Member.find(params["id"])
     erb(:"members/show")
 end
+
+
+post "/member/:id/delete" do
+    member = Member.find(params["id"])
+    member.delete
+    redirect "/members-list"
+end
