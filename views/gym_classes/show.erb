@@ -17,6 +17,16 @@
     <ul class="details-list">
         <li><b>Class:</b> <%= @gym_class.name %></li>
         <li><b>Trainer:</b> <%= @gym_class.trainer_name %></li>
+        <li>
+            <b>Available Sessions:</b>
+            <ul>
+                <% @gym_class.sessions.each do |session| %>
+                    <li>
+                        <%= session.day_display %> <%= session.time%>
+                    </li>                    
+                <% end %>
+            </ul>
+        </li>
     </ul>
 </div>
 
@@ -28,7 +38,7 @@
         <% @gym_class.bookings.each do |booking| %>
             <li>
                 <a href="/member/<%= booking.member.id %>">
-                    <%= booking.member.full_name %> (<%= booking.member.preferred_name%>) — <%= booking.time %>
+                    <%= booking.member.full_name %> (<%= booking.member.preferred_name%>) — <%= booking.session.time %>
                 </a>
                 <form action="/booking/<%= booking.id %>/edit" method="get">
                     <input type="submit" value="Edit Booking">

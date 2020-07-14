@@ -80,4 +80,8 @@ class Booking
         Member.find(@member_id)
     end
 
+    def session
+        Session.find(@session_id)
+    end
+
 end

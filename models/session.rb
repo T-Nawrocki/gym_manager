@@ -11,6 +11,10 @@ class Session
         @time = options["time"]
     end
 
+    def self.map_items(data)
+        data.map { |session| Session.new(session) }
+    end
+
     def day_display
         case @day
         when 1
@@ -45,7 +49,14 @@ class Session
     end
 
     # READ
-    # Omitted—sessionswill only be read as part of GymClass.sessions
+    def self.find(id)
+        sql = "SELECT * FROM sessions
+        WHERE id = $1"
+        values = [id]
+
+        result = SqlRunner.run(sql, values).first
+        Session.new(result)
+    end
 
     # UPDATE
     # Omitted—design decision to only allow creation/deletion

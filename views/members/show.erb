@@ -30,7 +30,7 @@
         <% @member.bookings.each do |booking| %>
             <li>
                 <a href="/class/<%= booking.gym_class.id %>">
-                    <%= booking.gym_class.name %> — <%= booking.time %>
+                    <%= booking.gym_class.name %> — <%= booking.session.day_display %> <%= booking.session.time%>
                 </a>
                 <form action="/booking/<%= booking.id %>/edit" method="get">
                     <input type="submit" value="Edit Booking">
