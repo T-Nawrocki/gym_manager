@@ -5,13 +5,14 @@ also_reload("../models/*")
 
 
 get "/class/:id/sessions" do
-    @class = GymClass.find(params["id"])
+    @gym_class = GymClass.find(params["id"])
     erb(:"sessions/new")
 end
 
-post "/class/:id/sessions" do
+post "/class/:gym_class_id/sessions" do
+    binding.pry
     new_session = Session.new(params)
-    session.save
+    new_session.save
     redirect "/class/#{new_session.gym_class_id}/sessions"
 end
 
