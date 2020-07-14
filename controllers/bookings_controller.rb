@@ -1,6 +1,7 @@
 require "sinatra"
 require "sinatra/contrib/all"
 require_relative "../models/booking"
+require_relative "../helpers/helper"
 also_reload("../models/*")
 
 
@@ -9,9 +10,14 @@ get "/booking/new" do
 end
 
 post "/booking/new" do
-    booking = Booking.new(params)
-    booking.save
-    redirect "/"
+    binding.pry  # TODO REMOVE
+    if Helper.all_answered?(params)
+        booking = Booking.new(params)
+        booking.save
+        redirect "/"
+    else
+        redirect "/error/invalid-data"
+    end
 end
 
 
