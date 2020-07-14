@@ -18,8 +18,7 @@ class SqlRunner
     end
 
     def self.convert_to_ruby_array(string)
-        split = string[1...-1].split(",")  # removes braces then splits on ","
-        split.map { |string| string[1...-1]}  # removes redundant quotes
+        string[1...-1].split(",")  # removes braces then splits on ","
     end
 
 end

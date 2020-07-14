@@ -14,7 +14,7 @@
     <input type="text" 
            id="available-time-input" 
            name="available_times" 
-           value="<%= SqlRunner.convert_to_sql_array(@gym_class.available_times) %>"
+           value="[<%= @gym_class.available_times.join(", ") %>]"
     >
 
     <input type="submit" value="Confirm">
