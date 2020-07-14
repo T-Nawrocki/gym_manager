@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS bookings;
-DROP TABLE IF EXISTS available_times;
+DROP TABLE IF EXISTS sessions;
 DROP TABLE IF EXISTS members;
 DROP TABLE IF EXISTS gym_classes;
 
@@ -19,7 +19,7 @@ CREATE TABLE members (
     join_date VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE available_times (
+CREATE TABLE sessions (
     id SERIAL PRIMARY KEY,
     gym_class_id INT REFERENCES gym_classes(id) ON DELETE CASCADE,
     day INT NOT NULL,
@@ -30,5 +30,5 @@ CREATE TABLE bookings (
     id SERIAL PRIMARY KEY,
     member_id INT REFERENCES members(id) ON DELETE CASCADE,
     gym_class_id INT REFERENCES gym_classes(id) ON DELETE CASCADE,
-    time VARCHAR(255) NOT NULL
+    time_id INT REFERENCES sessions(id) ON DELETE CASCADE
 );

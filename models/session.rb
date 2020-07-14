@@ -1,6 +1,6 @@
 require_relative "../db/sql_runner"
 
-class AvailableTime
+class Session
     
     attr_reader :id, :gym_class_id, :day, :time
 
@@ -11,11 +11,30 @@ class AvailableTime
         @time = options["time"]
     end
 
+    def day_display
+        case @day
+        when 1
+            "Monday"
+        when 2
+            "Tuesday"
+        when 3
+            "Wednesday"
+        when 4
+            "Thursday"
+        when 5
+            "Friday"
+        when 6
+            "Saturday"
+        when 7
+            "Sunday"          
+        end
+    end
+
 
     # === CRUD METHODS ===
     # CREATE
     def save
-        sql = "INSERT INTO available_times
+        sql = "INSERT INTO sessions
         (gym_class_id, day, time)
         VALUES ($1, $2, $3)
         RETURNING id"
@@ -26,19 +45,19 @@ class AvailableTime
     end
 
     # READ
-    # Omitted—available times will only be read as part of GymClass.times
+    # Omitted—sessionswill only be read as part of GymClass.sessions
 
     # UPDATE
     # Omitted—design decision to only allow creation/deletion
 
     # DELETE
     def self.delete_all
-        sql = "DELETE FROM available_times"
+        sql = "DELETE FROM sessions"
         SqlRunner.run(sql)
     end
 
     def delete
-        sql = "DELETE FROM available_times
+        sql = "DELETE FROM sessions
         WHERE id = $1"
         values = [@id]
         SqlRunner.run(sql, values)

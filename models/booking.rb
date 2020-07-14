@@ -23,10 +23,10 @@ class Booking
     # CREATE
     def save
         sql = "INSERT INTO bookings
-        (member_id, gym_class_id, time)
+        (member_id, gym_class_id, time_id)
         VALUES ($1, $2, $3)
         RETURNING id"
-        values = [@member_id, @gym_class_id, @time]
+        values = [@member_id, @gym_class_id, @time_id]
 
         result = SqlRunner.run(sql, values).first
         @id = result["id"].to_i
@@ -51,10 +51,10 @@ class Booking
     # UPDATE
     def update
         sql = "UPDATE bookings
-        SET (member_id, gym_class_id, time)
+        SET (member_id, gym_class_id, time_id)
         = ($1, $2, $3)
         WHERE id = $4"
-        values = [@member_id, @gym_class_id, @time, @id]
+        values = [@member_id, @gym_class_id, @time_id, @id]
         SqlRunner.run(sql, values)
     end
 
