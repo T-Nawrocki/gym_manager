@@ -52,6 +52,7 @@ session2 = Session.new({
     "day" => "4",
     "time" => "10:00"
 })
+
 session1.save
 session2.save
 
@@ -59,12 +60,12 @@ session2.save
 booking1 = Booking.new({
     "member_id" => member1.id,
     "gym_class_id" => class1.id,
-    "time_id" => session1.id
+    "session_id" => session1.id
 })
 booking2 = Booking.new({
     "member_id" => member2.id,
     "gym_class_id" => class1.id,
-    "time_id" => session1.id
+    "session_id" => session1.id
 })
 
 booking1.save
@@ -94,7 +95,7 @@ booking2.save
 # booking3 = Booking.new({
 #     "member_id" => member2.id,
 #     "gym_class_id" => class1.id,
-#     "time" => "Sun 19:00"
+#     "session_id" => session1.id
 # })
 
 # member3.save

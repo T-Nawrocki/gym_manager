@@ -4,14 +4,14 @@ require_relative "gym_class"
 
 class Booking
     
-    attr_accessor :member_id, :gym_class_id, :time
+    attr_accessor :member_id, :gym_class_id, :session_id
     attr_reader :id
 
     def initialize(options)
         @id = options["id"].to_i if options["id"]
         @member_id = options["member_id"].to_i
         @gym_class_id = options["gym_class_id"].to_i
-        @time_id = options["time_id"].to_i
+        @session_id = options["session_id"].to_i
     end
 
     def self.map_items(data)
@@ -23,10 +23,10 @@ class Booking
     # CREATE
     def save
         sql = "INSERT INTO bookings
-        (member_id, gym_class_id, time_id)
+        (member_id, gym_class_id, session_id)
         VALUES ($1, $2, $3)
         RETURNING id"
-        values = [@member_id, @gym_class_id, @time_id]
+        values = [@member_id, @gym_class_id, @session_id]
 
         result = SqlRunner.run(sql, values).first
         @id = result["id"].to_i
@@ -51,10 +51,10 @@ class Booking
     # UPDATE
     def update
         sql = "UPDATE bookings
-        SET (member_id, gym_class_id, time_id)
+        SET (member_id, gym_class_id, session_id)
         = ($1, $2, $3)
         WHERE id = $4"
-        values = [@member_id, @gym_class_id, @time_id, @id]
+        values = [@member_id, @gym_class_id, @session_id, @id]
         SqlRunner.run(sql, values)
     end
 
