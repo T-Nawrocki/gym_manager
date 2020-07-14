@@ -10,14 +10,14 @@ get "/class/:id/sessions" do
 end
 
 post "/class/:gym_class_id/sessions" do
-    binding.pry
     new_session = Session.new(params)
     new_session.save
     redirect "/class/#{new_session.gym_class_id}/sessions"
 end
 
 post "/session/:id/delete" do
-    session = Session.new(params["id"])
+    session = Session.find(params["id"])
+    id = session.gym_class_id
     session.delete
-    redirect "/class/#{session.gym_class_id}/sessions"
+    redirect "/class/#{id}/sessions"
 end

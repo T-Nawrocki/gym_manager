@@ -55,6 +55,20 @@
 
 </form>
 
+<div class="sessions-list">
+    <ul>
+        <% sorted = @gym_class.sessions.sort_by { |session| session.time }.sort_by { |session| session.day } %>
+        <% sorted.each do |session| %>
+            <li>
+                <%= session.day_display %> <%= session.time %>
+                <form action="/session/<%= session.id %>/delete" method="post">
+                    <input type="submit" value="Delete">
+                </form>
+            </li>
+        <% end %>
+    </ul>
+</div>
+
 <footer>
     <form action="/class/<%= @gym_class.id %>" method="get">
         <input type="submit" value="Done"> 
