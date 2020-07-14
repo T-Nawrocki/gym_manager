@@ -1,11 +1,11 @@
 <header class="page-header">
     <h1><%= @gym_class.name %></h1>
 
-    <form action="/booking/new" method="get">
-        <input type="submit" value="Book a place on this class">
-    </form>
     <form action="/class/<%= @gym_class.id %>/edit" method="get">
-        <input type="submit" value="Edit class details">
+        <input type="submit" value="Edit class name or trainer">
+    </form>
+    <form action="/class/<%= @gym_class.id %>/sessions" method="get">
+        <input type="submit" value="Edit or delete a session time">
     </form>
     <form action="/class/<%= @gym_class.id %>/delete" method="post">
         <input type="submit" value="Delete this class">
@@ -34,6 +34,9 @@
 
 <div class="details">
     <h2>Bookings</h2>
+    <form action="/booking/new" method="get">
+        <input type="submit" value="Book a place on this class">
+    </form>
     <ul class="details-list">
         <% @gym_class.bookings.each do |booking| %>
             <li>

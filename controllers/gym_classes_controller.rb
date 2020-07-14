@@ -17,7 +17,7 @@ end
 post "/class/new" do
     new_class = GymClass.new(params)
     new_class.save
-    redirect "/class-list"
+    redirect "/class/#{new_class.id}/sessions"
 end
 
 
