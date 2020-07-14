@@ -5,10 +5,8 @@ DROP TABLE IF EXISTS gym_classes;
 CREATE TABLE gym_classes (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    trainer_name VARCHAR(255) NOT NULL,
-    available_times VARCHAR(255)[] NOT NULL
+    trainer_name VARCHAR(255) NOT NULL
 );
-
 
 CREATE TABLE members (
     id SERIAL PRIMARY KEY,

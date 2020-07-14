@@ -14,13 +14,13 @@ member1 = Member.new({
     "last_name" => "Shoyo",
     "preferred_name" =>"Shoyo",
     "age" => "15",
-    "join_date" => "10 Jul 2020"
+    "join_date" => "2020-07-14"
     })
 member2 = Member.new({
     "first_name" => "Tsukishima",
     "last_name" => "Kei",
     "age" => "15",
-    "join_date" => "10 Jul 2020"
+    "join_date" => "2020-07-14"
     })
 
 member1.save
@@ -30,7 +30,6 @@ member2.save
 class1 = GymClass.new({
     "name" => "Volleyball",
     "trainer_name" => "Ukai",
-    "available_times" => "{Mon 12:30,Tue 15:45,Sat 18:00}"
 })
 class2 = GymClass.new({
     "name" => "HIIT",
@@ -44,12 +43,12 @@ class2.save
 booking1 = Booking.new({
     "member_id" => member1.id,
     "gym_class_id" => class1.id,
-    "time" => class1.available_times[0]
+    "time" => "Mon 15:30"
 })
 booking2 = Booking.new({
     "member_id" => member2.id,
     "gym_class_id" => class1.id,
-    "time" => class1.available_times[1]
+    "time" => "Thu 10:45"
 })
 
 booking1.save
@@ -59,10 +58,10 @@ booking2.save
 # member1.age = "16"
 # member1.update
 
-# class1.available_times = ["Mon 13:30", "Tue 15:45", "Sat 18:00"]
+# class1.name = "Volleyball—Serving"
 # class1.update
 
-# booking1.time = class1.available_times[0]
+# booking1.time = "Sat 08:00"
 # booking1.update
 
 
@@ -79,7 +78,7 @@ booking2.save
 # booking3 = Booking.new({
 #     "member_id" => member2.id,
 #     "gym_class_id" => class1.id,
-#     "time" => class1.available_times[1]
+#     "time" => "Sun 19:00"
 # })
 
 # member3.save

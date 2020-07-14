@@ -17,14 +17,6 @@
     <ul class="details-list">
         <li><b>Class:</b> <%= @gym_class.name %></li>
         <li><b>Trainer:</b> <%= @gym_class.trainer_name %></li>
-        <li>
-            <b>Available Times:</b>
-            <ul class="details-list-nested">
-                <% @gym_class.available_times.each do |time| %>
-                    <li><%= time %></li>
-                <% end %>
-            </ul>
-        </li>
     </ul>
 </div>
 

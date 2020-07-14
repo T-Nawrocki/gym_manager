@@ -2,19 +2,13 @@ require_relative "../db/sql_runner"
 
 class GymClass
     
-    attr_accessor :name, :trainer_name, :available_times
+    attr_accessor :name, :trainer_name
     attr_reader :id
 
     def initialize(options)
         @id = options["id"].to_i if options["id"]
         @name = options["name"]
         @trainer_name = options["trainer_name"]
-        @available_times =
-            if options["available_times"]
-                SqlRunner.convert_to_ruby_array(options["available_times"])
-            else
-                []
-            end
     end
 
     def self.map_items(data)
@@ -26,11 +20,10 @@ class GymClass
     # CREATE
     def save
         sql = "INSERT INTO gym_classes
-        (name, trainer_name, available_times)
-        VALUES ($1, $2, $3)
+        (name, trainer_name)
+        VALUES ($1, $2)
         RETURNING id"
-        available_times_sql = SqlRunner.convert_to_sql_array(@available_times)
-        values = [@name, @trainer_name, available_times_sql]
+        values = [@name, @trainer_name]
         result = SqlRunner.run(sql, values).first
         @id = result["id"].to_i
     end
@@ -53,11 +46,10 @@ class GymClass
     # UPDATE
     def update
         sql = "UPDATE gym_classes
-        SET (name, trainer_name, available_times)
-        = ($1, $2, $3)
+        SET (name, trainer_name)
+        = ($1, $2)
         WHERE id = $4"
-        available_times_sql = SqlRunner.convert_to_sql_array(@available_times)
-        values = [@name, @trainer_name, available_times_sql, @id]
+        values = [@name, @trainer_name, @id]
         SqlRunner.run(sql, values)
     end
 
