@@ -10,11 +10,13 @@ class TestAvailableTime < MiniTest::Test
         @available_time1 = AvailableTime.new({
             "id" => "1",
             "gym_class_id" => "1",
-            "time" => "Mon 15.30"
+            "day" => "1",
+            "time" => "15:30"
         })    
         @available_time2 = AvailableTime.new({
             "gym_class_id" => "2",
-            "time" => "Thu 10.00"
+            "day" => "4",
+            "time" => "10:00"
         })    
     end
 
@@ -32,8 +34,12 @@ class TestAvailableTime < MiniTest::Test
         assert_equal(1, @available_time1.gym_class_id)
     end
 
+    def test_has_day
+        assert_equal(1, @available_time1.day)
+    end
+
     def test_has_time
-        assert_equal("Mon 15.30", @available_time1.time)
+        assert_equal("15:30", @available_time1.time)
     end
 
 end

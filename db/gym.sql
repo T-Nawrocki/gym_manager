@@ -22,7 +22,8 @@ CREATE TABLE members (
 CREATE TABLE available_times (
     id SERIAL PRIMARY KEY,
     gym_class_id INT REFERENCES gym_classes(id) ON DELETE CASCADE,
-    time VARCHAR(255)
+    day INT NOT NULL,
+    time VARCHAR(5) NOT NULL
 );
 
 CREATE TABLE bookings (
