@@ -11,12 +11,12 @@ class TestBooking < MiniTest::Test
             "id" => "1",
             "member_id" => "2",
             "gym_class_id" => "3",
-            "time" => "Mon 15:30"
+            "time_id" => "1"
         })
         @booking2 = Booking.new({
             "member_id" => "4",
             "gym_class_id" => "25",
-            "time" => "Wed 09:00"
+            "time_id" => "2"
         })
     end
 
@@ -39,7 +39,7 @@ class TestBooking < MiniTest::Test
     end
 
     def test_has_time
-        assert_equal("Mon 15:30", @booking1.time)
+        assert_equal(1, @booking1.time_id)
     end
 
 end

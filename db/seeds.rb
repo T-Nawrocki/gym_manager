@@ -2,10 +2,12 @@ require "pry-byebug"
 require_relative "../models/member"
 require_relative "../models/gym_class"
 require_relative "../models/booking"
+require_relative "../models/available_time"
 
 
 Member.delete_all
 GymClass.delete_all
+AvailableTime.delete_all
 Booking.delete_all
 
 
@@ -40,15 +42,30 @@ class1.save
 class2.save
 
 
+available_time1 = AvailableTime.new({
+    "id" => "1",
+    "gym_class_id" => "1",
+    "day" => "1",
+    "time" => "15:30"
+})    
+available_time2 = AvailableTime.new({
+    "gym_class_id" => "2",
+    "day" => "4",
+    "time" => "10:00"
+})
+available_time1.save
+available_time2.save
+
+
 booking1 = Booking.new({
     "member_id" => member1.id,
     "gym_class_id" => class1.id,
-    "time" => "Mon 15:30"
+    "time_id" => "Mon 15:30"
 })
 booking2 = Booking.new({
     "member_id" => member2.id,
     "gym_class_id" => class1.id,
-    "time" => "Thu 10:45"
+    "time_id" => "Thu 10:45"
 })
 
 booking1.save

@@ -11,7 +11,7 @@ class Booking
         @id = options["id"].to_i if options["id"]
         @member_id = options["member_id"].to_i
         @gym_class_id = options["gym_class_id"].to_i
-        @time = options["time"]
+        @time_id = options["time_id"].to_i
     end
 
     def self.map_items(data)
