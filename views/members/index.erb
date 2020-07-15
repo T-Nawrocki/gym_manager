@@ -9,7 +9,7 @@
 
 <div class="page-content">
     <ul id="members-list">
-        <% @members.each do |member| %>
+        <% @members.sort_by { |member| member.first_name }.sort_by { |member| member.last_name}. each do |member| %>
             <li>
                 <a href="/member/<%= member.id %>">
                     <%= member.full_name %> (<%= member.preferred_name %>)
