@@ -10,7 +10,6 @@ get "/booking/new" do
 end
 
 post "/booking/new" do
-    binding.pry  # TODO REMOVE
     if Helper.all_answered?(params)
         booking = Booking.new(params)
         booking.save
@@ -34,7 +33,11 @@ get "/booking/:id/edit" do
 end
 
 post "/booking/:id/edit" do
-    edited_booking = Booking.new(params)
-    edited_booking.update
-    redirect "/"
+    if Helper.all_answered?(params)
+        edited_booking = Booking.new(params)
+        edited_booking.update
+        redirect "/"
+    else
+        redirect "/error/invalid-data"
+    end
 end
