@@ -1,16 +1,22 @@
 <header class="page-header">
     <h1>Class List</h1>
-    <form action="/class/new" method="get">
-        <input type="submit" value="Create New Class">
-    </form>
+    <nav>
+        <form action="/class/new" method="get">
+            <input type="submit" value="Create New Class" class="button">
+        </form>
+    </nav>
 </header>
 
-<ul id="class-list">
-    <% @gym_classes.each do |gym_class| %>
-        <li>
-            <a href="/class/<%= gym_class.id %>">
-                <%= gym_class.name %> (<%= gym_class.trainer_name %>)
-            </a>
-        </li>
-    <% end %>
-</ul>
+<div class="page-content">
+
+    <ul id="class-list">
+        <% @gym_classes.each do |gym_class| %>
+            <li>
+                <a href="/class/<%= gym_class.id %>">
+                    <%= gym_class.name %> (<%= gym_class.trainer_name %>)
+                </a>
+            </li>
+        <% end %>
+    </ul>
+
+</div>

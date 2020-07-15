@@ -171,6 +171,11 @@ ul {
     border: 2px inset var(--site-background-dark);
 }
 
+.details-list ul {
+    list-style: disc;
+    margin-left: 40px;
+}
+
 /* PAGE-SPECIFIC STYLES */
 /* Home */
 #welcome-message {
@@ -224,4 +229,18 @@ ul {
 
 .member-form .button {
     margin-top: 10%;
+}
+
+/* Class Details */
+.class-details-heading {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.class-details-heading .button {
+    position: relative;
+    height: 40px;
+    top: 25%;
 }
