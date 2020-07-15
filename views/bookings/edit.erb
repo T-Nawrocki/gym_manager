@@ -5,7 +5,7 @@
 <form action="/booking/<%= @booking.id %>/edit" method="post" class="booking-form">
 
     <label for="member-select">Member</label>
-    <select name="member_id" id="member-select">
+    <select name="member_id" id="member-select" required>
         <% Member.all.each do |member| %>
             <option value="<%= member.id %>" <%= "selected" if @booking.member_id == member.id%>>
                 <%= member.full_name %>
@@ -14,7 +14,7 @@
     </select>
 
     <label for="gym-class-select">Class</label>
-    <select name="gym_class_id" id="gym-class-select">
+    <select name="gym_class_id" id="gym-class-select" required>
         <% GymClass.all.each do |gym_class| %>
             <option value="<%= gym_class.id %>" <%= "selected" if @booking.gym_class_id == gym_class.id%>>
                 <%= gym_class.name %>

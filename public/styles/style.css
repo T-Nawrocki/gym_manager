@@ -86,3 +86,22 @@ body {
 .page-content {
     margin: 5% 10% 10% 10%;
 }
+
+
+/* PAGE-SPECIFIC STYLES */
+/* Home */
+.review-quote {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 36px;
+    text-shadow: 
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white,
+        -3px -3px 0 black,  
+        3px -3px 0 black,
+        -3px 3px 0 black,
+        3px 3px 0 black;
+    
+    color: red;
+}

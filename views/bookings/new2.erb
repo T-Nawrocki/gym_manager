@@ -9,7 +9,7 @@
 >
 
     <label for="session-select">Session</label>
-    <select name="session_id" id="session-select">
+    <select name="session_id" id="session-select" required>
         <option/>
         <% @gym_class.sessions.each do |session| %>
             <option value="<%= session.id %>">
