@@ -244,3 +244,12 @@ ul {
     height: 40px;
     top: 25%;
 }
+
+/* New Class */
+.class-form div {
+    margin-top: 3%
+}
+
+.class-form .button {
+    margin-top: 6%;
+}

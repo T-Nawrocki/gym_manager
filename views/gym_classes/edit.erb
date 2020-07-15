@@ -2,16 +2,22 @@
     <h1>Edit Class Details</h1>
 </header>
 
-<form action="/class/<%= @gym_class.id %>/edit" method="post" class="class-form">
+<div class="page-content">
 
-    <label for="name-input">Name</label>
-    <input type="text" id="name-input" name="name" value="<%= @gym_class.name %>" required>
+    <form action="/class/<%= @gym_class.id %>/edit" method="post" class="class-form">
 
-    <label for="trainer-name-input">Trainer</label>
-    <input type="text" id="trainer-name-input" name="trainer_name" value="<%= @gym_class.trainer_name %>" required>
+        <div>
+            <label for="name-input">Name</label>
+            <input type="text" id="name-input" name="name" value="<%= @gym_class.name %>" required>
+        </div>
 
-    
-    
-    <input type="submit" value="Confirm">
+        <div>
+            <label for="trainer-name-input">Trainer</label>
+            <input type="text" id="trainer-name-input" name="trainer_name" value="<%= @gym_class.trainer_name %>" required>
+        </div>        
+        
+        <input type="submit" value="Confirm" class="button">
 
-</form>
+    </form>
+
+</div>

@@ -2,14 +2,22 @@
     <h1>New Class</h1>
 </header>
 
-<form action="/class/new" method="post" class="class-form">
+<div class="page-content">
 
-    <label for="name-input">Name</label>
-    <input type="text" id="name-input" name="name" required>
+    <form action="/class/new" method="post" class="class-form">
 
-    <label for="trainer-name-input">Trainer</label>
-    <input type="text" id="trainer-name-input" name="trainer_name" required>
+        <div>
+            <label for="name-input">Name</label>
+            <input type="text" id="name-input" name="name" required>
+        </div>
 
-    <input type="submit" value="Next (session schedule)">
+        <div>
+            <label for="trainer-name-input">Trainer</label>
+            <input type="text" id="trainer-name-input" name="trainer_name" required>
+        </div>
 
-</form>
+        <input type="submit" value="Next (session schedule)" class="button">
+
+    </form>
+
+</div>
