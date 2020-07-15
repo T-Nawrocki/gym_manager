@@ -1,5 +1,11 @@
 :root {
-    --site-background: #CED3DC;
+    --site-background-light: #CED3DC;
+    --site-background-dark: #736B77;
+    --site-background: linear-gradient(
+        180deg,
+        var(--site-background-light) 0%,
+        var(--site-background-dark) 100%
+    );
     --content-background: #FCF7F8;
     --primary-accent: #4E8098;
     --secondary-accent: #A31621;
@@ -20,7 +26,8 @@
 
 body {
     margin: 0;
-    background-color: var(--site-background);
+    background-size: cover;
+    background: var(--site-background);
     font-family: var(--body-font);
 }
 
@@ -30,6 +37,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     border-bottom: 3px solid var(--secondary-accent);
     padding: 10px;
     background-color: var(--primary-accent);
@@ -37,20 +45,26 @@ body {
 
 .site-header nav {
     display: flex;
-    justify-self: center;
 }
 
 .nav-button{
-    width: 100px;
-    height: 40px;
+    width: 125px;
+    height: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
     font-family: var(--body-font);
+    font-size: 16px;
     font-weight: bold;
 }
 
 
+
+
 .content {
     position: absolute;
-    width: 50%;
+    left:22.5%;
+    right: 22.5%;
+    width: 55%;
     height: 75%;
     background-color: var(--content-background);
 }
