@@ -9,7 +9,7 @@
             <label for="member-select">Member</label>
             <select name="member_id" id="member-select" required>
                 <option/>
-                <% Member.all.each do |member| %>
+                <% Member.all.sort_by { |member| member.first_name }.sort_by { |member| member.last_name }.each do |member| %>
                     <option value="<%= member.id %>"><%= member.full_name %></option>
                 <% end %>
             </select>
@@ -19,7 +19,7 @@
             <label for="gym-class-select">Class</label>
             <select name="gym_class_id" id="gym-class-select" required>
                 <option/>
-                <% GymClass.all.each do |gym_class| %>
+                <% GymClass.all.sort_by { |gym_class| gym_class.name }.each do |gym_class| %>
                     <option value="<%= gym_class.id %>"><%= gym_class.name %></option>
                 <% end %>
             </select>
