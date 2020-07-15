@@ -1,11 +1,9 @@
+/* DEFAULT/ROOT STYLES */
+
 :root {
     --site-background-light: #CED3DC;
     --site-background-dark: #736B77;
-    --site-background: linear-gradient(
-        180deg,
-        var(--site-background-light) 0%,
-        var(--site-background-dark) 100%
-    );
+    --site-background: var(--site-background-dark);
     --content-background: #FCF7F8;
     --primary-accent: #4E8098;
     --secondary-accent: #A31621;
@@ -31,6 +29,8 @@ body {
     font-family: var(--body-font);
 }
 
+
+/* SITE HEADER STYLES */
 
 .site-header {
     flex: 1;
@@ -58,7 +58,7 @@ body {
 }
 
 
-
+/* CONTENT STYLES */
 
 .content {
     position: absolute;
@@ -66,5 +66,6 @@ body {
     right: 22.5%;
     width: 55%;
     height: 75%;
+    border-radius: 0px 0px 15px 15px;
     background-color: var(--content-background);
 }
