@@ -216,3 +216,12 @@ ul {
     flex-direction: row;
     justify-content: space-between;
 }
+
+/* New Member */
+.member-form div {
+    margin-top: 3%;
+}
+
+.member-form .button {
+    margin-top: 10%;
+}

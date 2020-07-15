@@ -2,28 +2,39 @@
     <h1>New Member</h1>
 </header>
 
-<form action="/member/new" method="post" class="member-form">
+<div class="page-content">
 
-    <label for="first-name-input">First Name</label>
-    <input type="text" id="first-name-input" name="first_name" required>
+    <form action="/member/new" method="post" class="member-form">
+        
+        <div>
+            <label for="first-name-input">First Name</label>
+            <input type="text" id="first-name-input" name="first_name" required>
+        </div>
 
-    <label for="last-name-input">Last Name</label>
-    <input type="text" id="last-name-input" name="last_name" required>
+        <div>
+            <label for="last-name-input">Last Name</label>
+            <input type="text" id="last-name-input" name="last_name" required>
+        </div>
 
-    <label for="preferred-name-input">
-        Preferred Name (we'll use your first name if you don't have a different preferred name)
-    </label>
-    <input type="text" id="preferred-name-input" name="preferred_name">
+        <div>
+            <label for="preferred-name-input">
+                Preferred Name (we'll use your first name if you don't have a different preferred name)
+            </label>
+            <input type="text" id="preferred-name-input" name="preferred_name">
+        </div>
 
-    <label for="age-input">Age</label>
-    <input type="number" id="age-input" name="age" min="15" max="125" required>
+        <div>
+            <label for="age-input">Age</label>
+            <input type="number" id="age-input" name="age" min="15" max="125" required>
+        </div>
 
-    <label for="join-date-input">Join Date</label>
-    <input type="date" id="join-date-input" name="join_date" required>
+        <div>
+            <label for="join-date-input">Join Date</label>
+            <input type="date" id="join-date-input" name="join_date" required>
+        </div>
 
-    <input 
-        type="submit" 
-        value="Confirm" 
-    >
+        <input type="submit" value="Confirm" class="button">
 
-</form>
+    </form>
+
+</div>

@@ -1,16 +1,20 @@
 <header class="page-header">
     <h1>Members List</h1>
-    <form action="/member/new" method="get">
-        <input type="submit" value="Enroll New Member">
-    </a>
+    <nav>
+        <form action="/member/new" method="get">
+            <input type="submit" value="Enroll New Member" class="button">
+        </form>
+    </nav>
 </header>
 
-<ul id="members-list">
-    <% @members.each do |member| %>
-        <li>
-            <a href="/member/<%= member.id %>">
-                <%= member.full_name %> (<%= member.preferred_name %>)
-            </a>
-        </li>
-    <% end %>
-</ul>
+<div class="page-content">
+    <ul id="members-list">
+        <% @members.each do |member| %>
+            <li>
+                <a href="/member/<%= member.id %>">
+                    <%= member.full_name %> (<%= member.preferred_name %>)
+                </a>
+            </li>
+        <% end %>
+    </ul>
+</div>
