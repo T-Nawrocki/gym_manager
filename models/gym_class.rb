@@ -51,7 +51,7 @@ class GymClass
         sql = "UPDATE gym_classes
         SET (name, trainer_name)
         = ($1, $2)
-        WHERE id = $4"
+        WHERE id = $3"
         values = [@name, @trainer_name, @id]
         SqlRunner.run(sql, values)
     end
