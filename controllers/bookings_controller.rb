@@ -48,6 +48,21 @@ end
 
 post "/booking/:id/edit" do
     if Helper.all_answered?(params)
+        redirect "/booking/#{params["id"]}/edit/#{params["member_id"]}/#{params["gym_class_id"]}"
+    else
+        redirect "/error/invalid-data"
+    end
+end
+
+get "/booking/:id/edit/:member_id/:gym_class_id" do
+    @member_id = params["member_id"]
+    @gym_class = GymClass.find(params["gym_class_id"])
+    @booking = Booking.find(params["id"])
+    erb(:"bookings/edit2")
+end
+
+post "/booking/:id/edit/:member_id/:gym_class_id" do
+    if Helper.all_answered?(params)
         edited_booking = Booking.new(params)
         edited_booking.update
         redirect "/"
