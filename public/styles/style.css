@@ -8,7 +8,9 @@
     --primary-accent: #4E8098;
     --primary-accent-light: #90C2E7;
     --secondary-accent: #A31621;
-    --secondary-accent-light: #D71D2D;
+    --secondary-accent-light: #C51B29;
+    --ternary-accent: #BC8034;
+    --ternary-accent-light: #CA8E3F;
     --body-text: #170312;
 
     --body-font: 'Trebuchet MS', 
@@ -44,6 +46,11 @@ a:visited {
 }
 a:visited:active {
     color: var(--primary-accent-light);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
 }
 
 
@@ -95,10 +102,20 @@ a:visited:active {
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin: 0px 5% 20px 5%;
     border-bottom: 2px solid var(--secondary-accent);
     font-family: var(--title-font);
+}
+
+.page-header nav {
+    flex: 1;
+    display: flex;
+    margin-left: 3%;
+}
+
+.page-header nav * {
+    padding: 5px;
 }
 
 .page-content {
@@ -125,6 +142,34 @@ a:visited:active {
     background-color: var(--secondary-accent);
 }
 
+.edit-button {
+    border: 2px outset var(--site-background-dark);
+    border-radius: 5px;
+    background-color: var(--ternary-accent);
+    color: var(--content-background);
+}
+
+.edit-button:hover {
+    background-color: var(--ternary-accent-light);
+}
+
+.edit-button:active {
+    border: 2px inset var(--site-background-dark);
+    background-color: var(--ternary-accent);
+}
+
+.button {
+    border: 2px outset var(--site-background-dark);
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: var(--site-background-light);
+}
+
+.button:active {
+    border: 2px inset var(--site-background-dark);
+}
 
 /* PAGE-SPECIFIC STYLES */
 /* Home */
@@ -159,8 +204,6 @@ a:visited:active {
 
 
 .sessions-list ul {
-    list-style: none;
-    padding: 0;
     text-align: right;
 }
 
@@ -168,4 +211,8 @@ a:visited:active {
     display: inline-block;
 }
 
-
+.booking-details-list li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

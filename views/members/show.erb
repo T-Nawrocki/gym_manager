@@ -1,50 +1,56 @@
 <header class="page-header">
     <h1><%= @member.full_name %></h1>
 
-    <form action="/booking/new" method="get">
-        <input type="submit" value="Book a class for this member">
-    </form>
-    <form action="/member/<%= @member.id %>/edit" method="get">
-        <input type="submit" value="Edit member details">
-    </form>
-    <form action="/member/<%= @member.id %>/delete" method="post">
-        <input type="submit" value="Delete this member">
-    </form>
+    <nav>
+        <form action="/booking/new" method="get">
+            <input type="submit" value="Book a class" class="button">
+        </form>
+        <form action="/member/<%= @member.id %>/edit" method="get">
+            <input type="submit" value="Edit member details" class="edit-button">
+        </form>
+        <form action="/member/<%= @member.id %>/delete" method="post">
+            <input type="submit" value="Delete this member" class="delete-button">
+        </form>
+    </nav>
 </header>
 
-<div class="details">
-    <h2>Member Details</h2>
-    <ul class="details-list">
-        <li><b>Name:</b> <%= @member.full_name %></li>
-        <li><b>Preferred Name:</b> <%= @member.preferred_name %></li>
-        <li><b>Age:</b> <%= @member.age %></li>
-        <li><b>Join Date:</b> <%= @member.join_date %></li>
-    </ul>
+<div class="page-content">
+
+    <div class="details">
+        <h2>Member Details</h2>
+        <ul class="details-list">
+            <li><b>Name:</b> <%= @member.full_name %></li>
+            <li><b>Preferred Name:</b> <%= @member.preferred_name %></li>
+            <li><b>Age:</b> <%= @member.age %></li>
+            <li><b>Join Date:</b> <%= @member.join_date %></li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="details">
+        <h2>Bookings</h2>
+        <ul class="booking-details-list">
+            <% @member.bookings.each do |booking| %>
+                <li>
+                    <a href="/class/<%= booking.gym_class.id %>" class="">
+                        <%= booking.gym_class.name %>: <%= booking.session.day_display %> <%= booking.session.time%>
+                    </a>
+                    <form action="/booking/<%= booking.id %>/edit" method="get">
+                        <input type="submit" value="Edit Booking" class="edit-button">
+                    </form>
+                    <form action="/booking/<%= booking.id %>/delete" method="post">
+                        <input type="submit" value="Cancel Booking" class="delete-button">
+                    </form>
+                </li>
+            <% end %>
+        </ul>
+    </div>
+
+    <footer class="page-footer">
+        <a href="/members-list">
+            <p>Back to Members List</p>
+        </a>
+    </footer>
+
 </div>
-
-<hr>
-
-<div class="details">
-    <h2>Bookings</h2>
-    <ul class="details-list">
-        <% @member.bookings.each do |booking| %>
-            <li>
-                <a href="/class/<%= booking.gym_class.id %>">
-                    <%= booking.gym_class.name %> — <%= booking.session.day_display %> <%= booking.session.time%>
-                </a>
-                <form action="/booking/<%= booking.id %>/edit" method="get">
-                    <input type="submit" value="Edit Booking">
-                </form>
-                <form action="/booking/<%= booking.id %>/delete" method="post">
-                    <input type="submit" value="Cancel Booking">
-                </form>
-            </li>
-        <% end %>
-    </ul>
-</div>
-
-<footer class="page-footer">
-    <a href="/members-list">
-        <p>Back to Members List</p>
-    </a>
-</footer>
