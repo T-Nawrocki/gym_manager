@@ -96,7 +96,8 @@ class GymClass
         values = [@id]
 
         result = SqlRunner.run(sql, values)
-        Session.map_items(result)
+        mapped = Session.map_items(result)
+        mapped.sort_by {|session| session.time}.sort_by {|session| session.day}
     end
 
 end
