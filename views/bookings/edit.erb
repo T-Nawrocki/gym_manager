@@ -2,26 +2,32 @@
     <h1>Edit Booking</h1>
 </header>
 
-<form action="/booking/<%= @booking.id %>/edit" method="post" class="booking-form">
+<div class="page-content">
+    <form action="/booking/<%= @booking.id %>/edit" method="post" class="booking-form">
 
-    <label for="member-select">Member</label>
-    <select name="member_id" id="member-select" required>
-        <% Member.all.each do |member| %>
-            <option value="<%= member.id %>" <%= "selected" if @booking.member_id == member.id%>>
-                <%= member.full_name %>
-            </option>
-        <% end %>
-    </select>
+        <div>
+            <label for="member-select">Member</label>
+            <select name="member_id" id="member-select" required>
+                <% Member.all.each do |member| %>
+                    <option value="<%= member.id %>" <%= "selected" if @booking.member_id == member.id%>>
+                        <%= member.full_name %>
+                    </option>
+                <% end %>
+            </select>
+        </div>
 
-    <label for="gym-class-select">Class</label>
-    <select name="gym_class_id" id="gym-class-select" required>
-        <% GymClass.all.each do |gym_class| %>
-            <option value="<%= gym_class.id %>" <%= "selected" if @booking.gym_class_id == gym_class.id%>>
-                <%= gym_class.name %>
-            </option>
-        <% end %>
-    </select>
+        <div>
+            <label for="gym-class-select">Class</label>
+            <select name="gym_class_id" id="gym-class-select" required>
+                <% GymClass.all.each do |gym_class| %>
+                    <option value="<%= gym_class.id %>" <%= "selected" if @booking.gym_class_id == gym_class.id%>>
+                        <%= gym_class.name %>
+                    </option>
+                <% end %>
+            </select>
+        </div>
 
-    <input type="submit" value="Next (select a session)">
+        <input type="submit" value="Next (select a session)" class="button">
 
-</form>
+    </form>
+</div>

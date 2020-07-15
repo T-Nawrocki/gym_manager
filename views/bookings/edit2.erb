@@ -2,25 +2,28 @@
     <h1>Edit Booking</h1>
 </header>
 
-<form 
-    action="/booking/<%= @booking.id %>/edit/<%= @member_id %>/<%= @gym_class.id %>" 
-    method="post" 
-    class="booking-form"
->
+<div class="page-content">
+    <form 
+        action="/booking/<%= @booking.id %>/edit/<%= @member_id %>/<%= @gym_class.id %>" 
+        method="post" 
+        class="booking-form"
+    >
+        <div>
+            <label for="session-select">Session</label>
+            <select name="session_id" id="session-select" required>
+                <option/>
+                <% @gym_class.sessions.each do |session| %>
+                    <option 
+                        value="<%= session.id %>" 
+                        <%= "selected" if  @booking.session_id == session.id%>
+                    >
+                        <%= session.day_display%> <%= session.time %>
+                    </option>
+                <% end %>
+            </select>
+        </div>
 
-    <label for="session-select">Session</label>
-    <select name="session_id" id="session-select" required>
-        <option/>
-        <% @gym_class.sessions.each do |session| %>
-            <option 
-                value="<%= session.id %>" 
-                <%= "selected" if  @booking.session_id == session.id%>
-            >
-                <%= session.day_display%> <%= session.time %>
-            </option>
-        <% end %>
-    </select>
+        <input type="submit" value="Confirm" class="button">
 
-    <input type="submit" value="Confirm">
-
-</form>
+    </form>
+</div>

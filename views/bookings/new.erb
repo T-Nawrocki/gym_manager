@@ -2,33 +2,30 @@
     <h1>New Booking</h1>
 </header>
 
-<form action="/booking/new" method="post" class="booking-form">
+<div class="page-content">
+    <form action="/booking/new" method="post" class="booking-form">
 
-    <label for="member-select">Member</label>
-    <select name="member_id" id="member-select" required>
-        <option/>
-        <% Member.all.each do |member| %>
-            <option value="<%= member.id %>"><%= member.full_name %></option>
-        <% end %>
-    </select>
+        <div>
+            <label for="member-select">Member</label>
+            <select name="member_id" id="member-select" required>
+                <option/>
+                <% Member.all.each do |member| %>
+                    <option value="<%= member.id %>"><%= member.full_name %></option>
+                <% end %>
+            </select>
+        </div>
 
-    <label for="gym-class-select">Class</label>
-    <select name="gym_class_id" id="gym-class-select" required>
-        <option/>
-        <% GymClass.all.each do |gym_class| %>
-            <option value="<%= gym_class.id %>"><%= gym_class.name %></option>
-        <% end %>
-    </select>
+        <div>
+            <label for="gym-class-select">Class</label>
+            <select name="gym_class_id" id="gym-class-select" required>
+                <option/>
+                <% GymClass.all.each do |gym_class| %>
+                    <option value="<%= gym_class.id %>"><%= gym_class.name %></option>
+                <% end %>
+            </select>
+        </div>
 
-    <%# <label for="session-select">Time</label> %>
-    <%# <select name="session_id" id="session-select"> %>
-        <%# <option/> %>
-        <%# gym_class = GymClass.find(gym_class_id) %>
-        <%# gym_class.sessions.each do |session| %>
-            <%#<option value="%><%#= session.id %><%#">%><%#= session.day_display%> <%#= session.time %><%# </option> %>
-        <%# end %>
-    <%# </select> %>
+        <input type="submit" value="Next (select a session)" class="button">
 
-    <input type="submit" value="Next (select a session)">
-
-</form>
+    </form>
+</div>

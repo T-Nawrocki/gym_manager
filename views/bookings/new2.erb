@@ -2,22 +2,26 @@
     <h1>New Booking</h1>
 </header>
 
-<form 
-    action="/booking/new/<%= @member_id %>/<%= @gym_class.id %>" 
-    method="post" 
-    class="booking-form"
->
+<div class="page-content">
 
-    <label for="session-select">Session</label>
-    <select name="session_id" id="session-select" required>
-        <option/>
-        <% @gym_class.sessions.each do |session| %>
-            <option value="<%= session.id %>">
-                <%= session.day_display%> <%= session.time %>
-            </option>
-        <% end %>
-    </select>
+    <form 
+        action="/booking/new/<%= @member_id %>/<%= @gym_class.id %>" 
+        method="post" 
+        class="booking-form"
+    >
+        <div>
+            <label for="session-select">Session</label>
+            <select name="session_id" id="session-select" required>
+                <option/>
+                <% @gym_class.sessions.each do |session| %>
+                    <option value="<%= session.id %>">
+                        <%= session.day_display%> <%= session.time %>
+                    </option>
+                <% end %>
+            </select>
+        </div>
 
-    <input type="submit" value="Confirm">
+        <input type="submit" value="Confirm" class="button">
+    </form>
 
-</form>
+</div>
