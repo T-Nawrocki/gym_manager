@@ -1,0 +1,26 @@
+:root {
+    --site-background: #CED3DC;
+    --content-background: #FCF7F8;
+    --primary-accent: #4E8098;
+    --secondary-accent: #A31621;
+    --light-accent: #90C2E7;
+    --body-text: #170312;
+}
+
+body {
+    margin: 0;
+
+    background-color: var(--site-background);
+}
+
+
+.site-header {
+    border-bottom: 3px solid var(--secondary-accent);
+    padding: 10px;
+    background-color: var(--primary-accent);
+}
+
+
+.content {
+    background-color: var(--content-background);
+}
