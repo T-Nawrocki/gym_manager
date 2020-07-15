@@ -183,20 +183,8 @@ ul {
 }
 
 #review-quote {
-    transform: rotate(10deg);
-    /* text-align: center; */
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: var(--title-font);
     font-size: 1.8vw;
-    text-shadow: 
-        -1px -1px 0 white,
-        1px -1px 0 white,
-        -1px 1px 0 white,
-        1px 1px 0 white,
-        -2px -2px 0 black,  
-        2px -2px 0 black,
-        -2px 2px 0 black,
-        2px 2px 0 black;
-    color: red;
 }
 
 /* New Session */
