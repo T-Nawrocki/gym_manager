@@ -59,7 +59,7 @@ body {
 }
 
 
-/* CONTENT STYLES */
+/* SHARED CONTENT STYLES */
 
 .content {
     position: absolute;
@@ -71,4 +71,18 @@ body {
     padding: 1%;
     background-color: var(--content-background);
     box-shadow: 0px 10px 15px var(--body-text);
+}
+
+.page-header {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 5% 20px 5%;
+    border-bottom: 2px solid var(--secondary-accent);
+    font-family: var(--title-font);
+}
+
+.page-content {
+    margin: 5% 10% 10% 10%;
 }
