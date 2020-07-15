@@ -90,18 +90,23 @@ body {
 
 /* PAGE-SPECIFIC STYLES */
 /* Home */
-.review-quote {
+#welcome-message {
+    text-align: right;
+}
+
+#review-quote {
+    transform: rotate(15deg);
+    text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 36px;
+    font-size: 2vw;
     text-shadow: 
         -1px -1px 0 white,
         1px -1px 0 white,
         -1px 1px 0 white,
         1px 1px 0 white,
-        -3px -3px 0 black,  
-        3px -3px 0 black,
-        -3px 3px 0 black,
-        3px 3px 0 black;
-    
+        -2px -2px 0 black,  
+        2px -2px 0 black,
+        -2px 2px 0 black,
+        2px 2px 0 black;
     color: red;
 }
