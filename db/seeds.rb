@@ -1,4 +1,3 @@
-require "pry-byebug"
 require_relative "../models/member"
 require_relative "../models/gym_class"
 require_relative "../models/booking"
@@ -70,41 +69,3 @@ booking2 = Booking.new({
 
 booking1.save
 booking2.save
-
-
-# member1.age = "16"
-# member1.update
-
-# class1.name = "Volleyball—Serving"
-# class1.update
-
-# booking1.time = "Sat 08:00"
-# booking1.update
-
-
-# member3 = Member.new({
-#     "first_name" => "Tsukishima",
-#     "last_name" => "Kei",
-#     "age" => "15",
-#     "join_date" => "10 Jul 2020"
-#     })
-# class3 = GymClass.new({
-#     "name" => "HIIT",
-#     "trainer_name" => "Washijo"
-# })
-# booking3 = Booking.new({
-#     "member_id" => member2.id,
-#     "gym_class_id" => class1.id,
-#     "session_id" => session1.id
-# })
-
-# member3.save
-# class3.save
-# booking3.save
-
-# member3.delete
-# class3.delete
-# booking3.delete
-
-binding.pry
-nil

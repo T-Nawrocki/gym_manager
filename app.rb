@@ -7,8 +7,6 @@ require_relative "controllers/sessions_controller"
 require_relative "controllers/errors_controller"
 require_relative "models/quote"
 
-require "pry-byebug"  #TODO REMOVE
-
 get "/" do
     @quote = Quote.random_quote
     @name = Quote.random_name
